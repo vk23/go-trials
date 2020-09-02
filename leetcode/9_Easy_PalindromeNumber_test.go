@@ -1,8 +1,8 @@
-package main
+package leetcode
 
 import (
-	"fmt"
 	"math"
+	"testing"
 )
 
 /*
@@ -25,7 +25,7 @@ func isPalindrome(x int) bool {
 	}
 
 	for i := length; i > 0 && x > 0; i = i - 2 {
-		d := pow(10, i)
+		d, _ := Pow(10, i)
 		l := x / d
 		r := x % 10
 
@@ -40,32 +40,21 @@ func isPalindrome(x int) bool {
 	return true
 }
 
-func pow(x int, a int) int {
-	if a < 0 {
-		return -1 // not implemented
-	}
-	if a == 0 {
-		return 1
-	}
-	res := 1
-	for ; a > 0; a-- {
-		res *= x
-	}
-	return res
-}
-
-func main() {
+func TestIsPalindrome(t *testing.T) {
 	for _, cs := range cases {
-		fmt.Printf("Case %10v, passed = %v\n", cs, cs.res == isPalindrome(cs.num))
+		res := isPalindrome(cs.num)
+		if res != cs.expected {
+			t.Errorf("IsPalindrome(%v) == %v, expected %v", cs.num, res, cs.expected)
+		}
 	}
 }
 
-type Case struct {
-	num int
-	res bool
+type testCase struct {
+	num      int
+	expected bool
 }
 
-var cases = []Case{
+var cases = []testCase{
 	{121, true},
 	{11, true},
 	{10, false},
