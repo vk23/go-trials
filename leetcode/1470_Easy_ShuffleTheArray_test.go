@@ -1,7 +1,6 @@
 package leetcode
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -46,7 +45,7 @@ func shuffle(nums []int, n int) []int {
 		}
 		visited[i] = true
 		i = next
-		fmt.Printf("mem=%d,  arr=%v, visited=%v\n", mem, nums, visited)
+		//fmt.Printf("mem=%d,  arr=%v, visited=%v\n", mem, nums, visited)
 	}
 	return nums
 }
@@ -83,9 +82,9 @@ func TestShuffleTheArray(t *testing.T) {
 	}
 
 	for _, cs := range cases {
-		fmt.Printf("before: %v\n", cs.nums)
+		//fmt.Printf("before: %v\n", cs.nums)
 		res := shuffle(cs.nums, cs.n)
-		fmt.Printf("after: %v\n", cs.nums)
+		//fmt.Printf("after: %v\n", cs.nums)
 		if !equalArrays(res, cs.expected) {
 			t.Errorf("shuffle(%v) == %v, expected %v", cs.nums, res, cs.expected)
 		}

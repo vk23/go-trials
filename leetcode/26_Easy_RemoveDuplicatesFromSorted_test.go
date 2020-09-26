@@ -1,7 +1,6 @@
 package leetcode
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -35,9 +34,9 @@ func TestRemoveDuplicatesFromSorted(t *testing.T) {
 	}
 
 	for _, cs := range cases {
-		fmt.Printf("before: %v\n", cs.nums)
+		//fmt.Printf("before: %v\n", cs.nums)
 		res := removeDuplicates(cs.nums)
-		fmt.Printf("after: %v\n", cs.nums)
+		//fmt.Printf("after: %v\n", cs.nums)
 		if res != cs.expected {
 			t.Errorf("removeDuplicates(%v) == %v, expected %v", cs.nums, res, cs.expected)
 		}

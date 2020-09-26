@@ -2,7 +2,6 @@ package leetcode
 
 import (
 	"errors"
-	"fmt"
 	"testing"
 )
 
@@ -70,7 +69,7 @@ func (s *Stack) Peek() (rune, error) {
 func (s *Stack) Push(r rune) {
 	s.runes = append(s.runes, r)
 	s.size++
-	fmt.Printf("size=%d\n", s.size)
+	//fmt.Printf("size=%d\n", s.size)
 }
 
 func (s *Stack) Pop() (rune, error) {
@@ -79,7 +78,7 @@ func (s *Stack) Pop() (rune, error) {
 	}
 	r := s.runes[s.size-1]
 	s.size--
-	fmt.Printf("size=%d\n", s.size)
+	//fmt.Printf("size=%d\n", s.size)
 	s.runes = s.runes[0:s.size]
 	return r, nil
 }

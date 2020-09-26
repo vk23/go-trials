@@ -86,9 +86,9 @@ func TestMergeTwoLists(t *testing.T) {
 
 	for _, cs := range cases {
 		res := mergeTwoLists(cs.l1, cs.l2)
-		print(cs.l1)
-		print(cs.l2)
-		print(res)
+		//print(cs.l1)
+		//print(cs.l2)
+		//print(res)
 		if !equal(res, cs.expected) {
 			t.Errorf("mergeTwoLists(%+v, %+v) == %+v, expected %+v", cs.l1, cs.l2, res, cs.expected)
 		}

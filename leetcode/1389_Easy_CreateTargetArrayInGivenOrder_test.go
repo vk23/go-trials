@@ -1,7 +1,6 @@
 package leetcode
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -27,7 +26,7 @@ func TestTargetArrayInGivenOrder(t *testing.T) {
 	}
 
 	for _, cs := range cases {
-		fmt.Printf("before: %v\n", cs.nums)
+		//fmt.Printf("before: %v\n", cs.nums)
 		res := createTargetArray(cs.nums, cs.indices)
 		if !equalArrays2(res, cs.expected) {
 			t.Errorf("createTargetArray(%v, %v) == %v, expected %v", cs.nums, cs.indices, res, cs.expected)
